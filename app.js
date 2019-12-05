@@ -1,9 +1,6 @@
 var express = require('express'),
 	app     = express();
 
-var host = process.env.HOST,
-	port = process.env.PORT;
-
 var msg = "Hello";
 
 var mysql = require('mysql');
@@ -30,7 +27,6 @@ app.get("/", function(req, resp){
 	resp.send(msg);
 });
 
-app.listen(port, '0.0.0.0', function() {
-  // print a message when the server starts listening
-  console.log("server starting on "+host+":"+port);
+app.listen(8080, function () {
+  console.log('Example app listening on port 8080!');
 });
